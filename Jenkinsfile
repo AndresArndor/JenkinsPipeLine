@@ -9,12 +9,12 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-        input(message: 'Deploy', id: 'deploy', ok: 'OK')
       }
     }
     stage('Deploy') {
       steps {
         echo 'Deploy to production'
+        input(message: 'Deploy to QA', id: 'qa', ok: 'Deploy', submitter: 'Sree', submitterParameter: 'Deploy')
       }
     }
   }
