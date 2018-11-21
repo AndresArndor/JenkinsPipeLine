@@ -15,6 +15,10 @@ pipeline {
       steps {
         echo 'Deploy to production'
         input(message: 'Deploy to QA', id: 'qa', ok: 'Deploy', submitter: 'sree', submitterParameter: 'Deploy')
+        waitUntil() {
+          echo 'Deploy to QA'
+        }
+
       }
     }
     stage('Deploy To NA1') {
