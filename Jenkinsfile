@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	docker run hello-world
+	sh 'docker run hello-world'
       }
     }
     stage('Deploy') {
