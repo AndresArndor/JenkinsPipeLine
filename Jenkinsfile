@@ -15,7 +15,8 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploy to NA1'
-	sh './tmp/jenkins_builds/myapp'
+	sh 'cd /tmp/jenkins_builds'
+	sh './myapp'
       }
     }
   }
