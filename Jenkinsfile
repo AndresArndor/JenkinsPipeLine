@@ -18,7 +18,8 @@ pipeline {
         input(message: 'Deploy to QA', id: 'qa', ok: 'Deploy', submitter: 'sree', submitterParameter: 'Deploy')
         waitUntil() {
           echo 'Deploy to QA'
-	  sh 'mv /home/vagrant/build/myapp /home/vagrant/binary'
+	  sh 'mkdir /tmp/jenkins_build'
+	  sh 'mv /home/vagrant/build/myapp /tmp/jenkins_build/'
         }
 
       }
@@ -27,7 +28,7 @@ pipeline {
       steps {
         input(message: 'Deploy to NA1', id: 'na1', ok: 'Deploy To NA1', submitter: 'sree', submitterParameter: 'NA1')
         echo 'Deploy to NA1'
-	sh './home/vagrant/binary/myapp'
+	sh './tmp/jenkins_build/myapp'
       }
     }
   }
