@@ -19,7 +19,7 @@ pipeline {
         waitUntil() {
           echo 'Deploy to QA'
 	  sh 'mkdir -p /tmp/jenkins_builds'
-	  sh 'cp /home/vagrant/build/myapp /tmp/jenkins_builds
+	  sh 'cp /home/vagrant/build/myapp /tmp/jenkins_builds'
         }
 
       }
