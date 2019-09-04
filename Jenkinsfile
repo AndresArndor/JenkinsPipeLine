@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --rm -v /home/vagrant/build:/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o myapp myapp.c'
+	sh 'docker run --rm -v /home/vagrant/build:/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o /tmp/jenkins_build/myapp myapp.c'
       }
     }
     stage('Deploy') {
@@ -18,8 +18,7 @@ pipeline {
         input(message: 'Deploy to QA', id: 'qa', ok: 'Deploy', submitter: 'sree', submitterParameter: 'Deploy')
         waitUntil() {
           echo 'Deploy to QA'
-	  sh 'mkdir /tmp/jenkins_build'
-	  sh 'mv /home/vagrant/build/myapp /tmp/jenkins_build/'
+	  sh 'ls -l /tmp/jenkins_builds'
         }
 
       }
