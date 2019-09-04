@@ -19,6 +19,7 @@ pipeline {
         waitUntil() {
           echo 'Deploy to QA'
 	  sh 'ls -l /tmp/jenkins_builds'
+	  sh 'cat /tmp/jenkins_builds/myapp'
         }
 
       }
