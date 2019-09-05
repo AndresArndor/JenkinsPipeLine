@@ -15,7 +15,7 @@ pipeline {
     stage('Test_Build') {
       steps {
         echo 'Run the binary file'
-	./home/vagrant/build/myapp
+	sh './home/vagrant/build/myapp'
       }
     }
   }
