@@ -15,9 +15,9 @@ pipeline {
     stage('Test_Build') {
       steps {
         echo 'Run the binary file'
-	sh 'cp /home/vagrant/build/myapp /usr/bin'
+	sh 'sudo cp /home/vagrant/build/myapp /usr/bin'
 	sh 'myapp'
-	sh 'rm /usr/bin/myapp'
+	sh 'sudo rm /usr/bin/myapp'
       }
     }
   }
