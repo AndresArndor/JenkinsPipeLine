@@ -12,9 +12,9 @@ pipeline {
 	sh 'docker run --rm -v /home/vagrant/build:/tmp/jenkins_builds -v /home/vagrant/src:/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o /tmp/jenkins_builds/myapp myapp.c'
       }
     }
-    stage('Deploy') {
+    stage('Test_Build') {
       steps {
-        echo 'Deploy to NA1'
+        echo 'Run the binary file'
 	/home/vagrant/build
       }
     }
