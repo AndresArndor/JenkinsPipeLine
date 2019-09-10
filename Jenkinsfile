@@ -4,7 +4,6 @@ pipeline {
     stage('Checkout') {
       steps {
         echo 'Taking source checkout'
-	sh 'mkdir /tmp/build'
       }
     }
     stage('Build') {
@@ -16,7 +15,7 @@ pipeline {
     stage('Test_Build') {
       steps {
         echo 'Run the binary file'
-	sh 'bash /tmp/runner.sh'
+	sh 'bash /tmp/build/runner.sh'
       }
     }
   }
