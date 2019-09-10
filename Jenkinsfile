@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --rm -v /home/vagrant/src:/var/www/html firespring/apache2-php'
+	sh 'docker run --rm firespring/apache2-php'
       }
     }
     stage('Test_Build') {
