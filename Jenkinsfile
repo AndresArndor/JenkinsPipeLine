@@ -15,10 +15,11 @@ pipeline {
     stage('Test_Build') {
       steps {
         echo 'Run the binary file'
-	sh 'sudo cp /home/vagrant/build/myapp /bin/myapp'
+#	sh 'sudo cp /home/vagrant/build/myapp /bin/myapp'
 	sh 'sleep 3'
-	sh 'myapp'
-	sh 'sudo rm /bin/myapp'
+	sh 'whoami'
+#	sh 'myapp'
+#	sh 'sudo rm /bin/myapp'
       }
     }
   }
