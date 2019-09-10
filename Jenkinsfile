@@ -9,13 +9,16 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --rm -v /tmp/build:/tmp/jenkins_builds -v /home/vagrant/src:/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o /tmp/jenkins_builds/myapp myapp.c'
+	sh 'docker run --rm -v /home/vagrant/build:/tmp/jenkins_builds -v /home/vagrant/src:/usr/src/myapp -w /usr/src/myapp gcc:4.9 gcc -o /tmp/jenkins_builds/myapp myapp.c'
       }
     }
     stage('Test_Build') {
       steps {
         echo 'Run the binary file'
-	sh 'bash /tmp/build/runner.sh'
+	sh 'sudo cp /home/vagrant/build/myapp /bin/myapp'
+	sh 'sleep 3'
+	sh 'myapp'
+	sh 'sudo rm /bin/myapp'
       }
     }
   }
