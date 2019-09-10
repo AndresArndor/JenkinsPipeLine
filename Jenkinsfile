@@ -9,13 +9,13 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --rm  nginxdemos/hello'
+	sh 'docker run --name some-nginx -v /home/vagrant/src:/usr/share/nginx/html:ro -d nginx'
       }
     }
     stage('Test_Build') {
       steps {
         echo 'Test the site'
-	curl localhost
+	sh 'docker ps | grep nginx'
       }
     }
   }
