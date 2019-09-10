@@ -4,6 +4,10 @@ pipeline {
     stage('Checkout') {
       steps {
         echo 'Taking source checkout'
+	sh 'touch /home/vagrant/build/runner.sh'
+	sh 'cat > runner.sh << EOF
+	./home/vagrant/build/myapp
+	EOF'
       }
     }
     stage('Build') {
@@ -15,7 +19,7 @@ pipeline {
     stage('Test_Build') {
       steps {
         echo 'Run the binary file'
-	sh 'myapp'
+	sh 'bash /home/vagrant/build/runner.sh'
       }
     }
   }
