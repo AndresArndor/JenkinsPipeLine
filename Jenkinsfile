@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --rm firespring/apache2-php'
+	sh 'docker run --rm  nginxdemos/hello'
       }
     }
     stage('Test_Build') {
