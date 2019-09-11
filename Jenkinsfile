@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test_Build') {
       steps {
-        echo 'Test the fucking site'
+        echo 'Test the site'
 	sh 'curl localhost:8001 | grep -i "hello world" && echo "PipeLine has Run Successfully!"'
       }
     }
