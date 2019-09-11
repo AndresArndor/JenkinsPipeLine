@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        echo 'Taking source checkout'
+        echo 'Pointless stage'
       }
     }
     stage('Build') {
