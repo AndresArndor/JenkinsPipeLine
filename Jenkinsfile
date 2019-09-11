@@ -9,13 +9,13 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --rm --name some-nginxi -p 8080:80 -v /home/vagrant/JenkinsPipeLine/src:/usr/share/nginx/html:ro -d nginx'
+	sh 'docker run --rm --name some-nginxi -p 8090:80 -v /home/vagrant/JenkinsPipeLine/src:/usr/share/nginx/html:ro -d nginx'
       }
     }
     stage('Test_Build') {
       steps {
         echo 'Test the site'
-	sh 'curl localhost:8080 | grep -i "hello world" && echo "PipeLine has Run Successfully!"'
+	sh 'curl localhost:8090 | grep -i "hello world" && echo "PipeLine has Run Successfully!"'
 	sh 'sleep 3'
 	sh 'docker stop some-nginxi'
       }
