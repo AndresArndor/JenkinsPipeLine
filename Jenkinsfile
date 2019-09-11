@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test_Build') {
       steps {
-        echo 'Suka, nakhuy test the site'
+        echo 'Suka, test the site'
 	sh 'curl localhost:8001 | grep -i "hello world" && echo "PipeLine has Run Successfully!"'
 	sh 'docker stop suka'
       }
