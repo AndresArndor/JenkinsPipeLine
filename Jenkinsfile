@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Preparing Build'
-	sh 'docker run --name some-nginxi -p 8080:80 -v /home/vagrant/src:/usr/share/nginx/html:ro -d nginx'
+	sh 'docker run --rm --name some-nginxi -p 8080:80 -v /home/vagrant/src:/usr/share/nginx/html:ro -d nginx'
       }
     }
     stage('Test_Build') {
