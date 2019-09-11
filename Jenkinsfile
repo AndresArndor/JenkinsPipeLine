@@ -16,6 +16,8 @@ pipeline {
       steps {
         echo 'Test the site'
 	sh 'curl localhost:8080'
+	sh 'sleep 3'
+	sh 'docker stop some-nginxi'
       }
     }
   }
