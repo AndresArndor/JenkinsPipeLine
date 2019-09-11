@@ -16,7 +16,7 @@ pipeline {
       steps {
         echo 'Test the site'
 	sh 'curl localhost:8090 | grep -i "hello world" && echo "PipeLine has Run Successfully!"'
-	sh 'sleep 3'
+	sh 'sleep 2'
       }
     }
   }
