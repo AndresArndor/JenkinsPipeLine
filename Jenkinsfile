@@ -15,7 +15,7 @@ pipeline {
     stage('Test_Build') {
       steps {
         echo 'Test the site'
-	sh 'curl localhost:8080 | grep -ri "hello world" && echo "PipeLine has Run Successfully!"'
+	sh 'curl localhost:8080 | grep -i hello world && echo "PipeLine has Run Successfully!"'
 	sh 'sleep 3'
 	sh 'docker stop some-nginxi'
       }
