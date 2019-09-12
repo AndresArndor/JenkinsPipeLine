@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        echo 'Suka, preparing Build'
+        echo 'Suka, prepare the Build'
 	sh 'docker run --name suka --rm -p 8001:80 -v /home/andrew/src:/usr/share/nginx/html:ro -d nginx'
       }
     }
