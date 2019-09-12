@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
-      steps {
-        echo 'Pointless stage'
-      }
-    }
     stage('Build') {
       steps {
         echo 'Suka, prepare the Build'
