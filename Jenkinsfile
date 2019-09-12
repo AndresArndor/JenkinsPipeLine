@@ -14,6 +14,11 @@ pipeline {
 	sh 'docker stop suka'
 	echo 'Suka is going to Production!'
       }
+    }  
+    stage('Build') {
+      steps {
+        echo 'Suka, push to production'
+      }
     }
   }
 }
