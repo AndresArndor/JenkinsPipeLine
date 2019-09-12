@@ -17,6 +17,7 @@ pipeline {
         echo 'Suka, test the site'
 	sh 'curl localhost:8001 | grep -i "hello world" && echo "PipeLine has Run Successfully, znachit Suka rabotaet!"'
 	sh 'docker stop suka'
+	echo 'Suka is going to Production'
       }
     }
   }
