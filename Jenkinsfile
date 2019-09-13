@@ -4,7 +4,8 @@ pipeline {
     stage('Build_Code') {
       steps {
         echo 'Suka, prepare the Build'
-	sh 'docker run --name blet --rm -p 8001:80 -v /home/andrew/src:/usr/share/nginx/html:ro -d nginx'
+	sh 'cd /home/andrew/JenkinsPipeLine/ && git pull'
+	sh 'docker run --name blet --rm -p 8001:80 -v /home/andrew/JenkinsPipeLine/src:/usr/share/nginx/html:ro -d nginx'
       }
     }
     stage('Build_Verification') {
