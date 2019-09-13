@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build_Code') {
       steps {
-        echo 'Suka, prepare the Build'
-        sh 'cd cd /tmp/JenkinsPipeLine && git pull'
+        echo 'Blet, prepare the Build'
+        sh 'cd /tmp/JenkinsPipeLine && git pull'
 	sh 'docker run --name blet --rm -p 8001:80 -v /tmp/JenkinsPipeLine/src:/usr/share/nginx/html:ro -d nginx'
       }
     }
