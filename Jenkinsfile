@@ -11,7 +11,7 @@ pipeline {
     stage('Build_Verification') {
       steps {
         echo 'blet, test the site'
-	sh 'curl localhost:80 | grep -i "карина" && echo "PipeLine has Run Successfully, znachit blet rabotaet!"'
+	sh 'curl localhost:8001 | grep -i hello world && echo "PipeLine has Run Successfully, znachit blet rabotaet!"'
 	sh 'docker stop blet'
 	echo 'blet is going to Production!'
       }
