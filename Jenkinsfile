@@ -18,7 +18,7 @@ pipeline {
     }  
     stage('Push_to_Test_Env') {
       steps {
-        echo 'blet, we are going to kubernetes'
+        echo 'blet, we will soon go to kubernetes'
       }
     }
   }
