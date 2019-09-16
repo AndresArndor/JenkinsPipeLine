@@ -13,13 +13,8 @@ pipeline {
         echo 'blet, test the site'
 	sh 'curl localhost:8001 | grep -i "hello-world" && echo "PipeLine has Run Successfully, znachit blet rabotaet!"'
 	sh 'docker stop blet'
-	echo 'blet is going to Production!'
+	echo 'blet is able to go to Production!'
       }
     }  
-    stage('Push_to_Test_Env') {
-      steps {
-        echo 'blet, we will soon go to kubernetes'
-      }
-    }
   }
 }
