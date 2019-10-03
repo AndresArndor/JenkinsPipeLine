@@ -4,7 +4,7 @@ pipeline {
     stage('Build_Code') {
       steps {
         echo 'Blet, prepare the Build'
-	sh 'if [[ `docker ps | grep blet` != `:` ]]; then docker kill blet; fi'
+	bash 'if [[ `docker ps | grep blet` != `:` ]]; then docker kill blet; fi'
         sh 'cd /tmp/JenkinsPipeLine && git pull'
 	sh 'docker run --name blet --rm -p 8001:80 -v /tmp/JenkinsPipeLine/src:/usr/share/nginx/html:ro -d nginx'
       }
