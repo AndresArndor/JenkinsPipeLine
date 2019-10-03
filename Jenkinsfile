@@ -13,7 +13,7 @@ pipeline {
       steps {
         echo 'blet, test the site'
 	sh 'curl localhost:8001 | grep -i "hello-world" && echo "PipeLine has Run Successfully, znachit blet rabotaet!"'
-	sh 'docker stop blet'
+	sh 'docker kill blet'
 	echo 'blet is able to go to Production!'
       }
     }  
